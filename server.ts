@@ -1,7 +1,7 @@
 
 /* ##########   MES DECLARATIONS   ################ */
-const http :any         = require('http');               
-require('app');      
+const http         = require('http');               
+const application  = require('./app');   
 
 require('dotenv')
     .config({ path: './config/.env' });               
@@ -11,10 +11,10 @@ require('dotenv')
 
 
 /* ################  SERVEUR  ##################### */
-app.set('port', 4000);           
+application.set('port', 4000);           
 
-const server = http.createServer(app);               
-server.listen( 4000, () => {      
+const server = http.createServer(application);               
+server.listen(4000, () => {      
 
     console.log(`Le serveur fonctionne sur le port ici`);
 
