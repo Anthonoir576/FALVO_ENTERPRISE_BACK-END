@@ -2,7 +2,6 @@
 const express           = require('express');
 const app               = express();
 const helmet            = require('helmet');  
-const mongoose          = require('mongoose');
 const cors              = require('cors');
 
 import { corsControls } from "./src/config/cors";
