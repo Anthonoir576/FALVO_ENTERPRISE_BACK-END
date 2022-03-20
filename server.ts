@@ -3,18 +3,19 @@ const http         = require('http');
 const application  = require('./app');   
 
 require('dotenv')
-    .config({ path: './config/.env' });               
+    .config({ path: './src/config/.env' });               
 
 
 
 
 
 
-application.set('port', 4000);           
+application.set('port', process.env.PORT || 4500);           
 
-const server = http.createServer(application);               
-server.listen(4000, () => {      
+const server = http.createServer(application);
 
-    console.log(`Le serveur fonctionne sur le port ici`);
+server.listen(process.env.PORT || 4500, () => {      
+
+    console.log(`Le serveur fonctionne sur le port ${process.env.PORT || 4500}`);
 
 });
