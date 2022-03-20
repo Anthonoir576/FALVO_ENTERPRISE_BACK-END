@@ -10,12 +10,12 @@ require('dotenv')
 
 
 
-application.set('port', process.env.PORT || 4500);           
+application.set('port',
+ process.env.PORT || process.env.PORT_DEFAULT
+);           
 
 const server = http.createServer(application);
 
-server.listen(process.env.PORT || 4500, () => {      
-
-    console.log(`Le serveur fonctionne sur le port ${process.env.PORT || 4500}`);
-
+server.listen(process.env.PORT || process.env.PORT_DEFAULT, () => {      
+    console.log(`Le serveur fonctionne sur le port ${process.env.PORT || process.env.PORT_DEFAULT}`);
 });
