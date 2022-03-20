@@ -1,5 +1,4 @@
 
-
 const express       = require('express');
 const app           = express();
 const helmet        = require('helmet');  
@@ -13,6 +12,8 @@ const environnement = require('dotenv');
 
 
 
+
+
 const corsControls: any = {
       origin             : '*',
       credentials        : true,
@@ -21,15 +22,19 @@ const corsControls: any = {
       'methods'          : 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
       'preflightContinue': false
 };
-      
-app.use(cors(corsControls));
+  
 
+
+app.use(cors(corsControls));
 
 app.use(helmet());
 
-
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
+
+
+
 
 
 
