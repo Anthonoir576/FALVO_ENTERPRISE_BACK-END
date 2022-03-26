@@ -3,7 +3,7 @@ const routerUser        = expressUser.Router();
 const usersCtrl         = require('../controllers/userControllers');
 
 
-routerUser.get('/', usersCtrl.testFonction);
+routerUser.post('/signup', usersCtrl.signup);
 
 
 

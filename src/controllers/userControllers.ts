@@ -1,12 +1,34 @@
 
-const Users          = require('../models/User');
+const User           = require('../models/User');
 const fsUser         = require('fs');                       
 const jwtUser        = require('jsonwebtoken');              
+const bcryptUser     = require('bcrypt');  
+const cryptoUser     = require('crypto-js'); 
+
+
+const environnement  = require('dotenv');       
+      environnement.config({ path: './src/config/.env' });
+
+
+
+
+exports.signup = (request?: any, response?: any, next?: any) => {
+    
+    const mail            : String     = request.body.email;
+    const mdp             : String     = request.body.mdp;
+    const chiffrementMail : any        = cryptoUser.HmacSHA256(mail, `${process.env.CRYPTO_KEY}`).toString();
     
 
+    bcryptUser.hash(mdp, 10)
+        .then((hash?: any) => {
+            const user = new User({
+                email : chiffrementMail,
+                mdp   : hash
+            });
+            user.save()
+                .then(() => response.status(201).json(  { message: 'Utilisateur crée'}  ))
+                .catch(() => response.status(400).json( { message: 'ERREUR : Utilisateur déjà existant !'} ));
+        })
+        .catch( (error?: any) => response.status(500).json({ error: error }));
 
-exports.testFonction = (request?: any, response?: any, next? :any) => {
-
-    response.status(200).json({ message : 'OK'});
-    
 };
