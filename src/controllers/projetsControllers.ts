@@ -1,5 +1,5 @@
 
-const Projets       = require('../models/Projets');
+const Projets       = require('../models/Projet');
 const fs            = require('fs');                       
 const jwt           = require('jsonwebtoken');              
     
