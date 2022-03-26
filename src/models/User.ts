@@ -7,8 +7,9 @@ const unique     = require('mongoose-unique-validator');
 
 const userSchema = mongoose.Schema({
 
-    email : { type: String, required: true, unique: true },
-    mdp   : { type: String, required: true }
+    email  : { type: String,  required: true, unique: true },
+    mdp    : { type: String,  required: true },
+    admin  : { type: Boolean, required: true }
 
 });
 

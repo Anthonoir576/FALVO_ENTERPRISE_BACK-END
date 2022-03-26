@@ -33,8 +33,8 @@ express.static(path.join(__dirname, 'images')));
 
 
 
-app.use('/api/projets', projetsRoutes);
-app.use('/api/users'  , usersRoutes);
+app.use('/falvoenterprise/api/projets', projetsRoutes);
+app.use('/falvoenterprise/api/users'  , usersRoutes);
 
 
 module.exports = app;
