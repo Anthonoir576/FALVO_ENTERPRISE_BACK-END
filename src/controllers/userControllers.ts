@@ -10,7 +10,8 @@ const environnement  = require('dotenv');
       environnement.config({ path: './src/config/.env' });
 
 
-
+// Pour le moment mise en place d'ajout manuel d'utilisateur. Aucune fonction en front pour le moment . Création uniquement d'une logique pour le moment. 
+// Aucun controle reelle . A revoir le moment venur 
 
 exports.signup = (request?: any, response?: any, next?: any) => {
     
