@@ -1,16 +1,16 @@
 
-const express       = require('express');                       
-const router        = express.Router();                          
-const projetsCtrl   = require('../controllers/projetControllers');
+const expressProjet     = require('express');                       
+const routerProjet      = expressProjet.Router();                          
+const projetsCtrl       = require('../controllers/projetControllers');
 // const auth          = require('../middleware/auth');              
 // const multer        = require('../middleware/multer-config');   
 
 
 
 
-router.get('/', projetsCtrl.testFonction);
+routerProjet.post('/add', projetsCtrl.addProject);
 
 
 
 
-module.exports = router;
+module.exports = routerProjet;
