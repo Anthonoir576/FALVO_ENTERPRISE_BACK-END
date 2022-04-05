@@ -3,7 +3,11 @@ const routerUser        = expressUser.Router();
 const usersCtrl         = require('../controllers/userControllers');
 const regexp            = require('../security/regex');
 
-routerUser.post('/signup', usersCtrl.signup);
+
+
+
+
+routerUser.post('/signup', regexp, usersCtrl.signup);
 
 
 
