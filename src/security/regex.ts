@@ -4,7 +4,7 @@ module.exports = (request? :any, response? :any, next? : any) => {
 
 
     let reqMail       = request.body.email.trim();
-    let reqPassword   = request.body.password.trim();
+    let reqPassword   = request.body.mdp.trim();
     let email         = new RegExp('^[a-zA-Z0-9._-]+[@]+[a-zA-Z0-9.-_]+[.]+[a-z]{2,5}[ ]{0,2}$', 'g');
     let testEmail     = email.test(reqMail);
     let password      = new RegExp(/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){4,16}$/gm);
