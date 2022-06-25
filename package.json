@@ -4,7 +4,8 @@
   "description"                  : "Back-end de FALVO ENTERPRISE",
   "main"                         : "server.ts",
   "scripts"                      : {
-    "start"                      : "nodemon server.ts"
+    "start"                      : "nodemon server.ts",
+    "ts"                         : "tsc -w"
   },
 
   "author"                       : "FALVO Anthony",
