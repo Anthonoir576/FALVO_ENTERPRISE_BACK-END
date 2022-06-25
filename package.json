@@ -4,7 +4,8 @@
   "description"                  : "Back-end de FALVO ENTERPRISE",
   "main"                         : "server.ts",
   "scripts"                      : {
-    "start"                      : "nodemon server.ts"
+    "start"                      : "nodemon server.ts",
+    "ts"                         : "tsc -w"
   },
 
   "author"                       : "FALVO Anthony",
@@ -29,6 +30,8 @@
   },
 
   "devDependencies"              : {
-    "@types/node"                : "^17.0.21"
+    "@types/node"                : "^17.0.21",
+    "@types/cors"                : "^2.8.12",
+    "@types/express"             : "^4.17.13"
   }
 }
