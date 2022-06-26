@@ -2,8 +2,9 @@
 const http         = require('http');               
 const application  = require('./app');   
 
-require('dotenv')
-    .config({ path: './src/config/.env' });               
+require('dotenv').config({ 
+    path: './src/config/.env'
+});               
 
 
 
